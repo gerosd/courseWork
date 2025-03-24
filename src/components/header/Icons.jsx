@@ -7,7 +7,7 @@ function Icons() {
     return (
         <div className="icons">
             {/* Обернуть img в Link, когда будут созданы компоненты */}
-            <img src={ favoriteIcon} alt="Icon"/>
+            <img src={favoriteIcon} alt="Icon"/>
             <img src={cartIcon} alt="Icon"/>
             <img src={userIcon} alt="Icon"/>
         </div>
