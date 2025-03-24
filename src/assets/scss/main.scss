@@ -1,0 +1,29 @@
+$first-color: #14191A;
+$second-color: #F8D0C3;
+$second-color-hover: #faecea;
+$third-color: #B0323A;
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url("../Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background: $first-color;
+    letter-spacing: 2px;
+}
+
+a {
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+}
+
+p, h1, h2, h3, span, input, input::placeholder {
+    font-family: Montserrat, sans-serif;
+}
