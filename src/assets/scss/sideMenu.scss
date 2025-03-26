@@ -1,0 +1,20 @@
+@use 'main' as *;
+
+.side-menu {
+    background: $first-color;
+    width: 200px;
+    height: 99vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 2px solid $third-color;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &.isActivate {
+        transform: translateX(0);
+    }
+}
+

@@ -1,0 +1,30 @@
+@use "../main" as *;
+
+.main {
+    width: 1640px;
+    margin: 0 auto;
+
+    .swiper {
+        text-align: center;
+        width: 900px !important;
+
+        .swiper-wrapper {
+            width: 80%;
+            .swiper-slide {
+
+                div {
+                    background: $third-color;
+
+                }
+            }
+        }
+
+        .swiper-button-next {
+
+        }
+
+        .swiper-button-prev {
+
+        }
+    }
+}
