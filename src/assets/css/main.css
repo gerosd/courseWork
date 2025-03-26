@@ -1,7 +1,9 @@
-$first-color: #14191A;
-$second-color: #F8D0C3;
-$second-color-hover: #faecea;
-$third-color: #B0323A;
+:root {
+    --first-color: #14191A;
+    --second-color: #F8D0C3;
+    --second-color-hover: #faecea;
+    --third-color: #B0323A;
+}
 
 @font-face {
     font-family: 'Montserrat', sans-serif;
@@ -15,7 +17,7 @@ $third-color: #B0323A;
 
 body {
     box-sizing: border-box;
-    background: $first-color;
+    background: var(--second-color);
     letter-spacing: 2px;
 }
 

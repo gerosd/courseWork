@@ -1,0 +1,17 @@
+@use 'main' as *;
+
+.footer {
+    margin-top: 80px;
+    background: $second-color;
+    width: 100%;
+    height: 300px;
+
+    .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 89.583%;
+        margin: 0 auto;
+        padding-top: 15px;
+    }
+}

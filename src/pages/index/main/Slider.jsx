@@ -21,7 +21,7 @@ export default () => {
             </SwiperSlide>
 
             <SwiperSlide>
-                <div>slide2</div>
+                <div>slide3</div>
             </SwiperSlide>
         </Swiper>
     )

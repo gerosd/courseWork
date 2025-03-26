@@ -2,7 +2,7 @@
 
 .header {
     margin: 10px auto 0 auto;
-    width: 1800px;
+    width: 93.75%;
     height: 92px;
     display: flex;
     flex-direction: column;
@@ -40,13 +40,13 @@
     .header-right {
         display: flex;
         flex-direction: column;
-        width: 1720px;
+        width: 95.556%;
 
         .header-right-elements {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 100%;
+            width: 100%;
 
             .name {
                 color: $third-color;
