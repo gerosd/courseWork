@@ -5,7 +5,7 @@ import Icons from "./Icons.jsx";
 import SideMenu from "../SideMenu.jsx";
 import '../../assets/scss/sideMenu.scss'
 
-function Header() {
+const Header = () => {
     const [isMenuActive, setIsMenuActive] = useState(false);
 
     const toggleMenu = () => {
@@ -14,7 +14,7 @@ function Header() {
 
     return (
         <div className="header">
-            <SideMenu isActive={isMenuActive} />
+            <SideMenu isActive={isMenuActive} toggleMenu={toggleMenu} />
             <div className="header-top">
                 <div className="header-left">
                     <MenuButton onClick={toggleMenu} />
@@ -25,7 +25,9 @@ function Header() {
                         <SearchBar />
                         <Icons />
                     </div>
-                    <div className="header-bottom"></div>
+                    <div className="header-bottom">
+
+                    </div>
                 </div>
             </div>
         </div>

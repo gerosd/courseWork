@@ -7,8 +7,7 @@ import {useNavigate} from "react-router-dom";
 const howWeWork = () => {
     //логика нажатия
 }
-/**релизовать функцию для проверки, есть ли логин. Если нет, то открыть div для логина, если есть, то открыть Profile.jsx
- */
+/**релизовать функцию для проверки, есть ли логин. Если нет, то открыть div для логина, если есть, то открыть Profile.jsx*/
 const Footer = () => {
     const navigate = useNavigate();
 
@@ -16,16 +15,22 @@ const Footer = () => {
         if (localStorage.getItem('user') !== null) {
             navigate('/profile');
         } else {
-            navigate('/login');
+            navigate('/login'); //change
         }
     }
 
+    const main = () => navigate('/');
+    const catalog = () => navigate('/catalog');
+    const cart = () => navigate('/cart');
+    const vacancies = () => navigate('/vacancies');
+    const contacts = () => navigate('/contact');
+
     const navigation = [
-        {name: "Главная", action: navigate('/')},
-        {name: "Каталог", action: navigate('/catalog')},
-        {name: "Корзина", action: navigate('/cart')},
+        {name: "Главная", action: main},
+        {name: "Каталог", action: catalog},
+        {name: "Корзина", action: cart},
         {name: "Профиль", action: profile},
-        {name: "Контакты", action: navigate('/contacts')},
+        {name: "Контакты", action: contacts},
     ];
     const forBuyers = [
         {name: "Пункты выдачи заказов", },
@@ -39,7 +44,7 @@ const Footer = () => {
         {name: "Как мы работаем", action: howWeWork},
         {name: "Правила продаж", file: "/src/assets/documents/Правила продаж PowerVibe.pdf"},
         {name: "Рекомендательные технологии", file: "/src/assets/documents/Рекомендательные технологии PowerVibe.pdf"},
-        {name: "Вакансии", }
+        {name: "Вакансии", action: vacancies}
     ];
 
     return (
@@ -49,6 +54,10 @@ const Footer = () => {
                 <FooterNav header="Покупателям" navigation={forBuyers} />
                 <FooterNav header="Компания" navigation={company} />
                 <Email />
+            </div>
+            <div className="footer-line"></div>
+            <div className="footer-copyright">
+                <p>©2025 Компания PowerVibe. Все права защищены.</p>
             </div>
         </div>
     )

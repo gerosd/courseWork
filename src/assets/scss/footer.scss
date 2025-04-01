@@ -30,7 +30,10 @@
                 font-size: 15px;
 
                 li {
-                    cursor: pointer;
+                    a {
+                        cursor: pointer;
+                        color: black;
+                    }
                 }
             }
         }
@@ -89,5 +92,22 @@
                 }
             }
         }
+    }
+
+    .footer-line {
+        margin: 30px auto 0 auto;
+        background: $third-color;
+        width: 1750px;
+        height: 5px;
+        border-radius: 1vw;
+    }
+
+    .footer-copyright {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+        color: #4D4D4D;
+        font-size: 18px;
     }
 }
