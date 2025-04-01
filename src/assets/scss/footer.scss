@@ -13,5 +13,81 @@
         width: 89.583%;
         margin: 0 auto;
         padding-top: 15px;
+
+        h1 {
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        .footer-nav {
+            width: 350px;
+
+            ul {
+                padding-top: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                font-size: 15px;
+
+                li {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .email {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 445px;
+            align-self: flex-start;
+
+            .email-input {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 355px;
+                padding-top: 13px;
+
+                input {
+                    width: 100%;
+                    height: 35px;
+                    border: none;
+                    border-radius: 20px;
+                    outline: none;
+                    background: $third-color;
+                    padding: 0 20px;
+                    color: #fff;
+                }
+
+                input::placeholder {
+                    color: $second-color;
+                }
+
+                div {
+                    position: absolute;
+                    right: 20px;
+                    cursor: pointer;
+
+                    img {
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .email-terms {
+                width: 355px;
+                font-size: 10px;
+                font-weight: 300;
+                text-align: justify;
+                line-height: 2;
+
+                a {
+                    color: #6082BF;
+                }
+            }
+        }
     }
 }

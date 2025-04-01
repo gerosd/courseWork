@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from "./Slider.jsx";
-import "../../../assets/scss/index/index.scss";
+import "../../../assets/css/index.css";
 
 function Main() {
     return (
