@@ -1,51 +1,94 @@
 @use 'main' as *;
 
-.menu-fullscreen {
-    width: 100vw;
-    height: 100vh;
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $first-color;
+    width: 150px;
+    height: 99vh;
     position: fixed;
     top: 0;
     left: 0;
+    border: 2px solid $third-color;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
     transform: translateX(-100%);
+    transition: transform 0.35s ease;
     z-index: 100;
 
-
-    &.isActivate {
+    &.active {
         transform: translateX(0);
     }
 
-    .side-menu {
+    .menu-back {
+        cursor: pointer;
+        padding: 28px 0;
+        transition: 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .menu-main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding: 28px 0;
-        background: $first-color;
-        width: 150px;
-        height: 99vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        border: 2px solid $third-color;
-        border-bottom-right-radius: 25px;
-        border-top-right-radius: 25px;
-        transform: translateX(-100%);
-        transition: transform 0.35s ease;
+        gap: 20px;
 
-        &.active {
-            transform: translateX(0);
+        p {
+            font-size: 24px;
+            font-weight: bold;
+            color: $third-color;
         }
 
-        .menu-back {
+        .menu-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
 
+            .content-element {
+                cursor: pointer;
+                width: 64px;
+                height: 64px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.2s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 120px;
+
+        .menu-line {
+            height: 5px;
+            width: 82px;
+            border-radius: 1vw;
+            background: $third-color;
         }
 
-        .menu-main {
+        img {
+            cursor: pointer;
+            margin-top: 16px;
+            width: 64px;
+            height: 64px;
+            transition: 0.2s ease;
 
-        }
-
-        .menu-contacts {
-
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 }

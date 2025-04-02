@@ -48,9 +48,28 @@
             width: 100%;
 
             .name {
+                position: relative;
                 color: $third-color;
                 font-size: 48px;
                 font-weight: bold;
+                cursor: pointer;
+
+                &::after {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -3%;
+                    content: "";
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: $third-color;
+                    transition: width 0.2s ease;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
             }
 
             .search-bar {

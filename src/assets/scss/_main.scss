@@ -15,7 +15,6 @@ $third-color: #B0323A;
 }
 
 body {
-
     background: $first-color;
     letter-spacing: 2px;
 }
@@ -27,4 +26,10 @@ a {
 
 p, h1, h2, h3, span, input, input::placeholder, li {
     font-family: Montserrat, sans-serif;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
