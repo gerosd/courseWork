@@ -108,7 +108,7 @@
                 font-weight: 300;
                 text-align: justify;
                 line-height: 2;
-                color: black;
+                color: #000;
 
                 a {
                     color: #6082BF;
@@ -132,5 +132,9 @@
         margin-top: 10px;
         color: #4D4D4D;
         font-size: 18px;
+
+        p {
+            color: inherit;
+        }
     }
 }

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom";
 import '../../assets/scss/footer.scss';
 import FooterNav from './FooterNav.jsx';
 import Email from './Email.jsx';
-import {useNavigate} from "react-router-dom";
+
+import Account from "../account/Account.jsx";
 
 const howWeWork = () => {
     //логика нажатия
@@ -10,12 +12,13 @@ const howWeWork = () => {
 /**релизовать функцию для проверки, есть ли логин. Если нет, то открыть div для логина, если есть, то открыть Profile.jsx*/
 const Footer = () => {
     const navigate = useNavigate();
+    const [showAccountModal, setShowAccountModal] = useState(false);
 
-    const profile = () => {
-        if (localStorage.getItem('user') !== null) {
+    const handleProfile = () => {
+        if (sessionStorage.getItem('user')) {
             navigate('/profile');
         } else {
-            navigate('/login'); //change
+            setShowAccountModal(true)
         }
     }
 
@@ -29,7 +32,7 @@ const Footer = () => {
         {name: "Главная", action: main},
         {name: "Каталог", action: catalog},
         {name: "Корзина", action: cart},
-        {name: "Профиль", action: profile},
+        {name: "Профиль", action: handleProfile},
         {name: "Контакты", action: contacts},
     ];
     const forBuyers = [
@@ -44,7 +47,7 @@ const Footer = () => {
         {name: "Как мы работаем", action: howWeWork},
         {name: "Правила продаж", file: "/src/assets/documents/Правила продаж PowerVibe.pdf"},
         {name: "Рекомендательные технологии", file: "/src/assets/documents/Рекомендательные технологии PowerVibe.pdf"},
-        {name: "Вакансии", action: vacancies}
+        {name: "Вакансии", action: vacancies},
     ];
 
     return (
@@ -59,6 +62,9 @@ const Footer = () => {
             <div className="footer-copyright">
                 <p>©2025 Компания PowerVibe. Все права защищены.</p>
             </div>
+            {showAccountModal && (
+                <Account onClose={() => setShowAccountModal(false)} />
+            )}
         </div>
     )
 }

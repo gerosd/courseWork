@@ -26,7 +26,7 @@ a {
     text-decoration: none;
 }
 
-p, h1, h2, h3, span, input, input::placeholder, li {
+p, h1, h2, h3, span, input, input::placeholder, li, button {
     font-family: Montserrat, sans-serif;
 }
 

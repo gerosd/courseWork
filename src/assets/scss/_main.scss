@@ -29,7 +29,8 @@ p, h1, h2, h3, span, input, input::placeholder, li {
 }
 
 .App {
+    min-height: 99.9vh;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    justify-content: space-between;
 }
