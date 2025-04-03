@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from "./Slider.jsx";
 import "../../assets/css/index.css";
 
-function Main() {
+function IndexMain() {
     return (
         <div className="main">
             <Slider />
@@ -10,4 +10,4 @@ function Main() {
     )
 }
 
-export default Main;
+export default IndexMain;
