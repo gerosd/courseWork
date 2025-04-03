@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 import Header from "../../components/header/Header.jsx";
 import Footer from "../../components/footer/Footer.jsx";
-import ContactsMain from "./MainContacts.jsx";
+import MainProfile from "./MainProfile.jsx";
 
-function Contacts() {
+function Profile() {
     return (
-        <div className="contacts mainContainer">
+        <div className="">
             <Header />
-            <ContactsMain />
+            <MainProfile />
             <Footer />
         </div>
     )
 }
 
-export default Contacts;
+export default Profile;

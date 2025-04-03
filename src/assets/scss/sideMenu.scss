@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     background: $first-color;
-    width: 150px;
+    width: 7.813vw;
     height: 99vh;
     position: fixed;
     top: 0;
@@ -35,7 +35,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 1.852%;
 
         p {
             font-size: 24px;
@@ -47,11 +47,12 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
+            width: 54.701%;
 
             .content-element {
                 cursor: pointer;
-                width: 64px;
-                height: 64px;
+                width: 100%;
+                height: 11.45%;
 
                 img {
                     width: 100%;
@@ -70,11 +71,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 17vh;
+        margin-top: 120px;
 
         .menu-line {
             height: 5px;
-            width: 82px;
+            width: 170%;
             border-radius: 1vw;
             background: $third-color;
         }

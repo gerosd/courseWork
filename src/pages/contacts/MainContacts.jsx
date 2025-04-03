@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Contacts() {
+function MainContacts() {
     return (
         <div className="main">
 
@@ -8,4 +8,4 @@ function Contacts() {
     )
 }
 
-export default Contacts;
+export default MainContacts;

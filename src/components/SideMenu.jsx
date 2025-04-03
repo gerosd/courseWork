@@ -18,6 +18,36 @@ function SideMenu({isActive, toggleMenu}) {
         toggleMenu();
     }
 
+    const monitors = () => {
+        navigate('/catalog?type=monitors');
+        toggleMenu();
+    }
+
+    const gamepads = () => {
+        navigate('/catalog?type=gamepad');
+        toggleMenu();
+    }
+
+    const mice = () => {
+        navigate('/catalog?type=mice');
+        toggleMenu();
+    }
+
+    const headphones = () => {
+        navigate('/catalog?type=headphones');
+        toggleMenu();
+    }
+
+    const keyboards = () => {
+        navigate('/catalog?type=keyboards');
+        toggleMenu();
+    }
+
+    const chairs = () => {
+        navigate('/catalog?type=chairs');
+        toggleMenu();
+    }
+
     return (
         <div className={`side-menu ${isActive ? "active" : ""}`}>
             <div className="menu-back" onClick={toggleMenu}>
@@ -27,23 +57,23 @@ function SideMenu({isActive, toggleMenu}) {
             <div className="menu-main">
                 <p>Каталог</p>
                 <div className="menu-content">
-                    <div className="content-element">
+                    <div className="content-element" onClick={monitors}>
                         <img src={monitorImg} alt="monitors"/>
                     </div>
-                    <div className="content-element">
-                        <img src={gamepadImg} alt="monitors"/>
+                    <div className="content-element" onClick={gamepads}>
+                        <img src={gamepadImg} alt="gamepads"/>
                     </div>
-                    <div className="content-element">
-                        <img src={mouseImg} alt="monitors"/>
+                    <div className="content-element" onClick={mice}>
+                        <img src={mouseImg} alt="mice"/>
                     </div>
-                    <div className="content-element">
-                        <img src={headphoneImg} alt="monitors"/>
+                    <div className="content-element" onClick={headphones}>
+                        <img src={headphoneImg} alt="hedphones"/>
                     </div>
-                    <div className="content-element">
-                        <img src={keyboardImg} alt="monitors"/>
+                    <div className="content-element" onClick={keyboards}>
+                        <img src={keyboardImg} alt="keyboards"/>
                     </div>
-                    <div className="content-element">
-                        <img src={chairImg} alt="monitors"/>
+                    <div className="content-element" onClick={chairs}>
+                        <img src={chairImg} alt="chairs"/>
                     </div>
                 </div>
             </div>

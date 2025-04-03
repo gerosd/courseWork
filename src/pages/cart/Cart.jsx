@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 import Header from "../../components/header/Header.jsx";
 import Footer from "../../components/footer/Footer.jsx";
-import ContactsMain from "./MainContacts.jsx";
+import MainCart from "./MainCart.jsx";
 
-function Contacts() {
+function Cart() {
     return (
-        <div className="contacts mainContainer">
+        <div className="cart mainContainer">
             <Header />
-            <ContactsMain />
+            <MainCart />
             <Footer />
         </div>
     )
 }
 
-export default Contacts;
+export default Cart;
