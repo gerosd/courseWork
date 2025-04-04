@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background: var(--first-color);
+    background: #101616;
     width: fit-content;
     position: relative;
     border-radius: 10px;
@@ -130,4 +130,8 @@
 
 .change-form p:hover::after {
     width: 100%;
+}
+
+.change-reg {
+    padding-top: 60px;
 }

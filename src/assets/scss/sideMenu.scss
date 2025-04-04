@@ -71,7 +71,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 120px;
+        margin-top: 150%;
 
         .menu-line {
             height: 5px;
@@ -83,8 +83,7 @@
         img {
             cursor: pointer;
             margin-top: 16px;
-            width: 64px;
-            height: 64px;
+            width: 100%;
             transition: 0.2s ease;
 
             &:hover {

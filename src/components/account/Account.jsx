@@ -7,6 +7,14 @@ import Registration from "./Registration.jsx";
 function Account({ onClose }) {
     const [showForm, setShowForm] = useState(true);
 
+    const [users, setUsers] = useState({
+        admin: {
+            username: 'admin',
+            city: '',
+            password: 'admin',
+        }
+    });
+
     useEffect(() => {
         if (showForm) {
             document.body.style.overflow = 'hidden';
@@ -40,9 +48,9 @@ function Account({ onClose }) {
     return (
         <div className="account-container" onClick={handleContainerClick}>
             {showForm ? (
-                <Login onToggleForm={toggleForm} closeForm={onClose} />
+                <Login users={users} onToggleForm={toggleForm} closeForm={onClose} />
             ) : (
-                <Registration onToggleForm={toggleForm} />
+                <Registration users={users} setUsers={setUsers} onToggleForm={toggleForm} closeForm={onClose} />
             )}
         </div>
     )
