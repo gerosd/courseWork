@@ -15,18 +15,17 @@ function Login({ users, onToggleForm, closeForm }) {
     const checkData = () => {
         const { username, password } = formData;
 
-        for (let key in users) {
+        for (const key in users) {
             const user = users[key];
-            if (username === user.username && password === user.password) {
-                alert('Успешно!');
-                setFormData({username: '', password: ''});
-                window.sessionStorage.setItem("user", username);
+            if (user.username === username && user.password === password) {
+                window.sessionStorage.setItem("currentUser", JSON.stringify(user));
+                alert('Вход выполнен!');
                 closeForm();
                 return;
             }
         }
         alert('Неверный логин или пароль');
-    }
+    };
 
     const handleSave = (e) => {
         e.preventDefault()

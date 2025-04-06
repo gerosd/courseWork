@@ -8,17 +8,14 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
         password: ''
     });
 
-    const [userCount, setUserCount] = useState(1);
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     }
 
     const saveData = () => {
-
-        if(!formData.username || !formData.city || !formData.password) {
-            alert("Заполните все поля!");
+        if (!formData.username || !formData.password) {
+            alert("Заполните все обязательные поля!");
             return;
         }
 
@@ -27,26 +24,21 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
         );
 
         if (userExists) {
-            alert('Пользователь с таким именем уже существует!');
-            resetForm();
+            alert('Пользователь уже существует!');
             return;
         }
 
-        const newUserId = `user${userCount}`;
         const newUser = {
             username: formData.username,
-            city: formData.city,
-            password: formData.password,
-        }
+            city: formData.city || '',
+            password: formData.password
+        };
 
-        setUsers(prev => ({ ...prev, [newUserId]: newUser }));
-        setUserCount(prev => prev++);
+        setUsers(prev => ({ ...prev, [formData.username]: newUser }));
         resetForm();
-        window.sessionStorage.setItem("user", formData.username);
-        window.sessionStorage.setItem("city", formData.city);
-        alert("Успешно!");
-        closeForm();
-    }
+        alert("Регистрация успешна!");
+        onToggleForm();
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -1,19 +1,129 @@
 @import url("main.css");
 
-.main {
-    width: 1640px;
-    margin: 0 auto;
-}
-
 .swiper {
     text-align: center;
-    width: 900px !important;
+    width: 1300px !important;
+    height: 550px;
 }
 
 .swiper-wrapper {
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 100px;
+    height: 100px;
+    margin-top: 0;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.swiper-button-next::after {
+    width: 100px;
+    height: 100px;
+    color: transparent;
+    background-image: url("../images/arrow.png");
+}
+
+.swiper-button-prev::after {
+    width: 100px;
+    height: 100px;
+    color: transparent;
+    transform: scaleX(-1);
+    background-image: url("../images/arrow.png");
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .swiper-slide div {
     background: var(--third-color);
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.popular {
+    margin: 100px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 1640px;
+}
+
+.popular h1 {
+    font-size: 40px;
+    color: var(--third-color);
+    font-weight: 600;
+}
+
+.popular-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2D3233;
+    border: 2px solid var(--second-color);
+    border-radius: 20px;
+}
+
+.card-img-container {
+    margin-top: 25px;
+    width: 235px;
+    height: 160px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-name {
+    font-size: 30px;
+    width: 290px;
+    height: 170px;
+    text-align: center;
+    padding: 16px 24px 0 24px;
+}
+
+.card-bottom {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    padding: 15px;
+}
+
+.price {
+    font-size: 20px;
+}
+
+.premium {
+    border: 1px solid var(--third-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.premium p {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--third-color);
+    padding: 5px;
 }

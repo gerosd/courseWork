@@ -9,13 +9,13 @@ import Account from "../account/Account.jsx";
 const howWeWork = () => {
     //логика нажатия
 }
-/**релизовать функцию для проверки, есть ли логин. Если нет, то открыть div для логина, если есть, то открыть Profile.jsx*/
+
 const Footer = () => {
     const navigate = useNavigate();
     const [showAccountModal, setShowAccountModal] = useState(false);
 
     const handleProfile = () => {
-        if (sessionStorage.getItem('user')) {
+        if (sessionStorage.getItem('currentUser')) {
             navigate('/profile');
         } else {
             setShowAccountModal(true)

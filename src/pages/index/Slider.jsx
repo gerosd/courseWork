@@ -10,6 +10,7 @@ export default () => {
             modules={[Navigation]}
             spaceBetween={0}
             slidesPerView={1}
+            centeredSlides={true}
             navigation
         >
             <SwiperSlide>

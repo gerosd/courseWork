@@ -13,12 +13,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
     background: var(--first-color);
-    letter-spacing: 2px;
 }
 
 a {
@@ -28,11 +27,13 @@ a {
 
 p, h1, h2, h3, span, input, input::placeholder, li, button {
     font-family: Montserrat, sans-serif;
+    letter-spacing: 2px;
 }
 
 .mainContainer {
     min-height: 99.9vh;
     display: flex;
     flex-direction: column;
+    gap: 50px;
     justify-content: space-between;
 }

@@ -1,12 +1,11 @@
-import './App.css';
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import IndexMain from "./pages/index/IndexMain.jsx";
 
-function App() {
+function Index() {
 
     return (
-        <div className="App">
+        <div className="mainContainer">
             <Header />
             <IndexMain />
             <Footer />
@@ -14,4 +13,4 @@ function App() {
     )
 }
 
-export default App
+export default Index
