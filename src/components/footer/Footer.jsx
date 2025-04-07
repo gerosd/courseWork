@@ -5,14 +5,16 @@ import FooterNav from './FooterNav.jsx';
 import Email from './Email.jsx';
 
 import Account from "../account/Account.jsx";
-
-const howWeWork = () => {
-    //логика нажатия
-}
+import HowWorks from "./HowWorks.jsx";
 
 const Footer = () => {
     const navigate = useNavigate();
     const [showAccountModal, setShowAccountModal] = useState(false);
+    const [showWorksModal, setShowWorksModal] = useState(false);
+
+    const handleWorks = () => {
+        setShowWorksModal(!showWorksModal);
+    }
 
     const handleProfile = () => {
         if (sessionStorage.getItem('currentUser')) {
@@ -44,7 +46,7 @@ const Footer = () => {
     ];
     const company = [
         {name: "Политика конфиденциальности", file: "/src/assets/documents/Политика конфиденциальности PowerVibe.pdf"},
-        {name: "Как мы работаем", action: howWeWork},
+        {name: "Как мы работаем", action: handleWorks},
         {name: "Правила продаж", file: "/src/assets/documents/Правила продаж PowerVibe.pdf"},
         {name: "Рекомендательные технологии", file: "/src/assets/documents/Рекомендательные технологии PowerVibe.pdf"},
         {name: "Вакансии", action: vacancies},
@@ -62,6 +64,9 @@ const Footer = () => {
             <div className="footer-copyright">
                 <p>©2025 Компания PowerVibe. Все права защищены.</p>
             </div>
+            {showWorksModal && (
+                <HowWorks onClose={() => setShowWorksModal(false)} />
+            )}
             {showAccountModal && (
                 <Account onClose={() => setShowAccountModal(false)} />
             )}

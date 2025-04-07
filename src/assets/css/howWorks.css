@@ -1,0 +1,60 @@
+@import url("main.css");
+
+.how-works {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
+.works-inner {
+    position: relative;
+    background: #101616;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.works-inner h1 {
+    color: white;
+    font-size: 32px;
+    padding: 23px 435px 0 435px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.many-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.works-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 0 20px 0;
+    width: 200px;
+    height: 200px;
+}
+
+.works-icon p {
+    font-size: 32px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.works-img-container {
+    width: 80px;
+    height: 80px;
+}
+
+.works-img-container img {
+    width: 100%;
+    height: 100%;
+}
