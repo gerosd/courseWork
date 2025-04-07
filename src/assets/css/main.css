@@ -18,6 +18,10 @@
 
 body {
     background: var(--first-color);
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--third-color) var(--second-color);
+    scrollbar-arrow-color: var(--third-color);
 }
 
 a {
@@ -36,4 +40,22 @@ p, h1, h2, h3, span, input, input::placeholder, li, button {
     flex-direction: column;
     gap: 50px;
     justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--second-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--third-color);
+    border-radius: 20px;
+    border: 2px solid var(--second-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7f1b20;
 }

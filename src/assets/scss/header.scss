@@ -95,6 +95,11 @@
                         border: none;
                         background: inherit;
                         padding: 0 20px;
+                        letter-spacing: 1px;
+
+                        &::placeholder {
+                            letter-spacing: inherit;
+                        }
                     }
 
                     img {
@@ -118,6 +123,7 @@
                     width: 64px;
                     height: 64px;
                     transition: 0.2s ease;
+                    position: relative;
 
                     &:hover {
                         transform: scale(1.1);
@@ -126,6 +132,46 @@
                     img {
                         width: 100%;
                         height: 100%;
+                    }
+
+                    #profile-img-change {
+                        border-radius: 50%;
+                    }
+
+                    .favorite {
+                        display: none;
+                        background: $third-color;
+                        z-index: 100;
+                        position: absolute;
+                        left: -250%;
+                        width: 400px;
+                        max-height: 250px;
+                        padding: 10px;
+                        border-radius: 20px;
+                        overflow-y: auto;
+
+                        .favorite-card {
+                            background: $second-color;
+                            color: black;
+                            border-radius: 10px;
+
+                            .favorite-card-img {
+                                box-sizing: content-box;
+                                padding: 5px;
+                                width: 135px;
+                                height: 90px;
+
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    .favorite-active {
+                        display: block;
                     }
                 }
             }
