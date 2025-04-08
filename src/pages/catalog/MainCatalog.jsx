@@ -3,7 +3,7 @@ import React from 'react';
 function MainCatalog({type}) {
 
     return (
-        <div className="">
+        <div className="main-catalog">
             <h1>{type}</h1>
         </div>
     )

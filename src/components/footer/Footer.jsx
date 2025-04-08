@@ -6,14 +6,20 @@ import Email from './Email.jsx';
 
 import Account from "../account/Account.jsx";
 import HowWorks from "./HowWorks.jsx";
+import Points from "./Points.jsx";
 
 const Footer = () => {
     const navigate = useNavigate();
     const [showAccountModal, setShowAccountModal] = useState(false);
     const [showWorksModal, setShowWorksModal] = useState(false);
+    const [showPointsModal, setShowPointsModal] = useState(false);
 
     const handleWorks = () => {
         setShowWorksModal(!showWorksModal);
+    }
+
+    const handlePoints = () => {
+        setShowPointsModal(!showPointsModal);
     }
 
     const handleProfile = () => {
@@ -38,7 +44,7 @@ const Footer = () => {
         {name: "Контакты", action: contacts},
     ];
     const forBuyers = [
-        {name: "Пункты выдачи заказов", },
+        {name: "Пункты выдачи заказов", action: handlePoints},
         {name: "Гарантия", file: "/src/assets/documents/Гарантийные условия PowerVibe.pdf"},
         {name: "Кредиты", file: "/src/assets/documents/Положение о товарном кредитовании PowerVibe.pdf"},
         {name: "Условия доставки", file: "/src/assets/documents/Условия доставки PowerVibe.pdf"},
@@ -64,6 +70,9 @@ const Footer = () => {
             <div className="footer-copyright">
                 <p>©2025 Компания PowerVibe. Все права защищены.</p>
             </div>
+            {showPointsModal && (
+                <Points onClose={() => setShowPointsModal(false)}/>
+            )}
             {showWorksModal && (
                 <HowWorks onClose={() => setShowWorksModal(false)} />
             )}

@@ -67,7 +67,7 @@ function Account({onClose}) {
     }
 
     return (
-        <div className="account-container" onClick={handleContainerClick}>
+        <div className="account-container back-container" onClick={handleContainerClick}>
             {showForm ? (
                 <Login users={users} onToggleForm={toggleForm} closeForm={onClose}/>
             ) : (
