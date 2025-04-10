@@ -4,10 +4,12 @@ import favoriteIcon from "../../assets/images/favourites_icon.svg";
 import favoriteIconActive from "../../assets/images/favourites_icon-active.svg";
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 
-function Cards({type}) {
+function Cards( {type, query} ) {
     const {products} = useProducts();
-    const allProducts = Object.values(products).flat();
     const [favorites, setFavorites] = useState({});
+
+    const allProducts = Object.values(products).flat();
+    const filteredProducts = type ? allProducts.filter(el => el.id.includes(type)) : query ? allProducts.filter(el => el.name.toLowerCase().includes(query.toLowerCase())) : allProducts;
 
     const handleToggleFavorite = (productId) => {
         setFavorites(prev => ({
@@ -18,8 +20,8 @@ function Cards({type}) {
 
     return (
         <div className="cards">
-            {allProducts.map((product) => (
-                <div className="product-card" key={product.id}>
+            {filteredProducts.map((product) => (
+                <div className="product-card" key={product.id} id={product.id}>
                     <div className="product-card-image">
                         <LazyLoadImage className="card-image-img" src={product.img} alt={product.name} />
                     </div>

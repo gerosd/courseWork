@@ -10,6 +10,7 @@ export default () => {
             modules={[Navigation, Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
+            allowTouchMove={false}
             centeredSlides={true}
             navigation
             autoplay={{

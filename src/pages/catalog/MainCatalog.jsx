@@ -3,8 +3,7 @@ import '../../assets/css/catalog.css';
 import sort from '../../assets/images/sort.png';
 import Cards from "./Cards.jsx";
 
-function MainCatalog({type}) {
-
+function MainCatalog({type, query}) {
 
     return (
         <div className="main-catalog">
@@ -14,7 +13,7 @@ function MainCatalog({type}) {
                 </div>
                 <p>Каталог</p>
             </div>
-            <Cards type={type}/>
+            <Cards type={type} query={query} />
         </div>
     )
 
