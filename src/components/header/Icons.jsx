@@ -35,14 +35,14 @@ function Icons() {
 
     return (
         <div className="icons">
-            <div className="icon-container">
+            <div className="icon-container" title="Избранное">
                 <img src={favoriteIcon} alt="Icon" onClick={toggleFavourites}/>
                 <Favorite isActive={isFavouriteActive} toggleFavorite={toggleFavourites}/>
             </div>
-            <div className="icon-container">
+            <div className="icon-container" title="Корзина">
                 <img src={cartIcon} alt="Icon" onClick={navToCart}/>
             </div>
-            <div className="icon-container">
+            <div className="icon-container" title="Профиль">
                 <img src={userIconChange} alt="Icon" id="profile-img-change" onClick={handleProfile}/>
             </div>
             {showAccountModal && (

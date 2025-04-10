@@ -27,7 +27,7 @@ const Header = () => {
                 </div>
                 <div className="header-right">
                     <div className="header-right-elements">
-                        <p className="name" onClick={main}>PowerVibe</p>
+                        <p className="name" title="Главная" onClick={main}>PowerVibe</p>
                         <SearchBar />
                         <Icons />
                     </div>

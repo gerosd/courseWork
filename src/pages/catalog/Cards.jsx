@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import {useProducts} from "../../assets/js/ProductsContext.jsx";
 import favoriteIcon from "../../assets/images/favourites_icon.svg";
 import favoriteIconActive from "../../assets/images/favourites_icon-active.svg";
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 
-function Cards( {type, query} ) {
-    const {products} = useProducts();
+function Cards( {type, query, allProducts } ) {
     const [favorites, setFavorites] = useState({});
-
-    const allProducts = Object.values(products).flat();
     const filteredProducts = type ? allProducts.filter(el => el.id.includes(type)) : query ? allProducts.filter(el => el.name.toLowerCase().includes(query.toLowerCase())) : allProducts;
 
     const handleToggleFavorite = (productId) => {
@@ -16,7 +12,7 @@ function Cards( {type, query} ) {
             ...prev,
             [productId]: !prev[productId]
         }));
-    }
+    };
 
     return (
         <div className="cards">

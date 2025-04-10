@@ -37,6 +37,24 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.main-top p::after {
+    content: "";
+    position: absolute;
+    bottom: -3%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background: var(--third-color);
+    border-radius: 5px;
+    width: 0;
+    transition: 0.2s ease;
+}
+
+.main-top p:hover::after {
+    width: 100%;
 }
 
 .cards {

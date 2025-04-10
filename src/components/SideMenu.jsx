@@ -19,7 +19,7 @@ function SideMenu({isActive, toggleMenu}) {
     }
 
     const monitors = () => {
-        navigate('/catalog?type=monitors');
+        navigate('/catalog?type=monitor');
         toggleMenu();
     }
 
@@ -39,12 +39,12 @@ function SideMenu({isActive, toggleMenu}) {
     }
 
     const keyboards = () => {
-        navigate('/catalog?type=keyboards');
+        navigate('/catalog?type=keyboard');
         toggleMenu();
     }
 
     const chairs = () => {
-        navigate('/catalog?type=chairs');
+        navigate('/catalog?type=chair');
         toggleMenu();
     }
 

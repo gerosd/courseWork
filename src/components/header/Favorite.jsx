@@ -7,6 +7,7 @@ function Favorite( {isActive } ) {
 
     return (
         <div className={`favorite ${isActive ? 'favorite-active' : ''}`}>
+
             <div className="favorite-card">
                 <div className="favorite-card-img">
                     <img src={ps5} alt="favourite-img"/>

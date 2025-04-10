@@ -81,6 +81,7 @@
                 max-width: 855px;
                 background: $second-color;
                 border-radius: 20px;
+                user-select: none;
 
                 label {
                     display: flex;
