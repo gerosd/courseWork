@@ -81,9 +81,14 @@ export const ProductsProvider = ({ children }) => {
         { id: 'headphones10', name: 'Гарнитура игровая A4TECH Bloody MC750', img: '/src/assets/images/catalog/headphones/headphones10.png', price: '6599₽', isPremium: true },
     ];
 
-    const [products, setProducts] = useState([
-        monitors, mice, keyboards, chairs, gamepads, headphones
-    ]);
+    const [products, setProducts] = useState({
+        monitors,
+        mice,
+        keyboards,
+        chairs,
+        gamepads,
+        headphones
+    });
 
     return (
         <ProductsContext.Provider value={{ products, setProducts }}>

@@ -133,6 +133,27 @@
     padding: 5px;
 }
 
+.to-catalog-container {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.to-catalog-container button {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    padding: 20px 115px;
+    border: none;
+    border-radius: 20px;
+    background: var(--third-color);
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.to-catalog-container button:hover {
+    background: #7f1b20;
+}
+
 .news-cards {
     display: flex;
     align-items: center;
