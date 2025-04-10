@@ -1,17 +1,23 @@
-import React, {useState} from 'react';
+import React from 'react';
 import favoriteIcon from "../../assets/images/favourites_icon.svg";
 import favoriteIconActive from "../../assets/images/favourites_icon-active.svg";
-import {LazyLoadImage} from 'react-lazy-load-image-component';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useDispatch, useSelector } from "react-redux";
+import { toggleFavorites } from "../../assets/js/favoritesSlice.jsx";
 
-function Cards( {type, query, allProducts } ) {
-    const [favorites, setFavorites] = useState({});
-    const filteredProducts = type ? allProducts.filter(el => el.id.includes(type)) : query ? allProducts.filter(el => el.name.toLowerCase().includes(query.toLowerCase())) : allProducts;
+function Cards({ type, query, allProducts }) {
+    const favorites = useSelector((state) => state.favorites);
+    const dispatch = useDispatch();
 
-    const handleToggleFavorite = (productId) => {
-        setFavorites(prev => ({
-            ...prev,
-            [productId]: !prev[productId]
-        }));
+    const filteredProducts = type
+        ? allProducts.filter((el) => el.id.includes(type))
+        : query
+            ? allProducts.filter((el) => el.name.toLowerCase().includes(query.toLowerCase()))
+            : allProducts;
+
+    const handleFavoriteClick = (productId, e) => {
+        e.stopPropagation(); // Предотвращаем всплытие события
+        dispatch(toggleFavorites(productId));
     };
 
     return (
@@ -19,7 +25,11 @@ function Cards( {type, query, allProducts } ) {
             {filteredProducts.map((product) => (
                 <div className="product-card" key={product.id} id={product.id}>
                     <div className="product-card-image">
-                        <LazyLoadImage className="card-image-img" src={product.img} alt={product.name} />
+                        <LazyLoadImage
+                            className="card-image-img"
+                            src={product.img}
+                            alt={product.name}
+                        />
                     </div>
                     <div className="product-card-content">
                         <div className="content-top">
@@ -27,15 +37,18 @@ function Cards( {type, query, allProducts } ) {
                             <p>{product.price}</p>
                         </div>
                         <div className="content-buttons">
-                            <div className="favorite-icon-container">
+                            <div
+                                className="favorite-icon-container"
+                                onClick={(e) => handleFavoriteClick(product.id, e)}
+                                title={favorites[product.id] ? 'Удалить из избранного' : 'Добавить в избранное'}
+                            >
                                 <img
-                                    onClick={() => handleToggleFavorite(product.id)}
                                     src={favorites[product.id] ? favoriteIconActive : favoriteIcon}
                                     alt="favourite"
                                     className={`favorite-icon ${favorites[product.id] ? 'active' : ''}`}
                                 />
                             </div>
-                            <button>Купить</button>
+                            <button className="buy-button">Купить</button>
                         </div>
                         <div className="content-bottom">
                             <div className="bottom-line"></div>
@@ -43,18 +56,18 @@ function Cards( {type, query, allProducts } ) {
                                 <p>В наличии</p>
                                 <p>0 отзывов</p>
                                 <p>Доставка: завтра</p>
-                                {product.isPremium &&
+                                {product.isPremium && (
                                     <div className="premium">
                                         <p>Premium</p>
                                     </div>
-                                }
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
             ))}
         </div>
-    )
+    );
 }
 
-export default Cards;
+export default React.memo(Cards);

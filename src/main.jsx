@@ -9,21 +9,25 @@ import Vacancies from "./pages/vacancies/Vacancies.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import {ProductsProvider} from "./assets/js/ProductsContext.jsx";
+import {Provider} from "react-redux";
+import {store} from './assets/js/Store.jsx';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <ProductsProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Index/>}/>
-                    <Route path="/contact" element={<Contacts/>}/>
-                    <Route path="/catalog" element={<Catalog/>}/>
-                    <Route path="/cart" element={<Cart/>}/>
-                    <Route path="/vacancies" element={<Vacancies/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="*" element={<PageNotFound/>}/>
-                </Routes>
-            </BrowserRouter>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Index/>}/>
+                        <Route path="/contact" element={<Contacts/>}/>
+                        <Route path="/catalog" element={<Catalog/>}/>
+                        <Route path="/cart" element={<Cart/>}/>
+                        <Route path="/vacancies" element={<Vacancies/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                        <Route path="*" element={<PageNotFound/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </Provider>
         </ProductsProvider>
     </StrictMode>,
 )

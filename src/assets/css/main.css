@@ -21,7 +21,6 @@ body {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--third-color) var(--second-color);
-    scrollbar-arrow-color: var(--third-color);
 }
 
 a {

@@ -118,6 +118,7 @@
             .icons {
                 display: flex;
                 gap: 40px;
+                position: relative;
 
                 .icon-container {
                     cursor: pointer;
@@ -130,6 +131,13 @@
                         transform: scale(1.1);
                     }
 
+                    span {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        color: white;
+                    }
+
                     img {
                         width: 100%;
                         height: 100%;
@@ -138,23 +146,60 @@
                     #profile-img-change {
                         border-radius: 50%;
                     }
+                }
 
-                    .favorite {
-                        display: none;
-                        background: $third-color;
-                        z-index: 100;
-                        position: absolute;
-                        left: -250%;
-                        width: 400px;
-                        max-height: 250px;
-                        padding: 10px;
-                        border-radius: 20px;
+                .favorite {
+                    display: none;
+                    background: $third-color;
+                    z-index: 100;
+                    position: absolute;
+                    left: -55%;
+                    top: 120%;
+                    width: 400px;
+                    height: 250px;
+                    padding: 10px;
+                    border-radius: 20px;
+
+                    &.favorite-active {
+                        display: block;
+                    }
+
+                    .fav-cards {
                         overflow-y: auto;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        gap: 20px;
+                        height: 100%;
+                        scrollbar-color: auto;
+
+                        ::-webkit-scrollbar {
+
+                            width: 8px;
+                        }
+
+                        ::-webkit-scrollbar-track {
+                            border-radius: 5px;
+                            width: 8px;
+                        }
+
+                        ::-webkit-scrollbar-thumb {
+                            border-radius: 5px;
+                        }
+
+                        .no-favorite {
+                            font-size: 18px;
+                            color: white;
+                            text-align: center;
+                            margin: auto;
+                        }
 
                         .favorite-card {
+                            display: flex;
                             background: $second-color;
                             color: black;
                             border-radius: 10px;
+                            flex-shrink: 0;
 
                             .favorite-card-img {
                                 box-sizing: content-box;
@@ -166,13 +211,51 @@
                                 img {
                                     width: 100%;
                                     height: 100%;
+                                    object-fit: contain;
+                                }
+                            }
+
+                            .fav-left {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-direction: column;
+                                width: 60%;
+                                padding: 5px 0;
+
+                                .fav-left-name {
+                                    font-size: 16px;
+                                    color: black;
+                                    text-align: center;
+                                }
+
+                                .left-bottom {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+
+                                    .fav-name {
+                                        color: black;
+                                    }
+
+                                    .fav-icon-container {
+                                        width: 36px;
+                                        height: 32px;
+
+                                        .fav-icon {
+                                            width: 100%;
+                                            height: 100%;
+                                            transition: .2s ease;
+
+                                            &:hover {
+                                                transform: scale(1.1);
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-
-                    .favorite-active {
-                        display: block;
                     }
                 }
             }

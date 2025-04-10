@@ -43,6 +43,12 @@
             font-size: 24px;
             font-weight: bold;
             color: $third-color;
+            cursor: pointer;
+            transition: .2s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         .menu-content {

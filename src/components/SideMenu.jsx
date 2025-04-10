@@ -48,6 +48,11 @@ function SideMenu({isActive, toggleMenu}) {
         toggleMenu();
     }
 
+    const catalog = () => {
+        navigate('/catalog');
+        toggleMenu();
+    }
+
     return (
         <div className={`side-menu ${isActive ? "active" : ""}`}>
             <div className="menu-back" onClick={toggleMenu}>
@@ -55,24 +60,24 @@ function SideMenu({isActive, toggleMenu}) {
             </div>
 
             <div className="menu-main">
-                <p>Каталог</p>
+                <p title="Перейти в каталог" onClick={catalog}>Каталог</p>
                 <div className="menu-content">
-                    <div className="content-element" onClick={monitors}>
+                    <div className="content-element" title="Мониторы" onClick={monitors}>
                         <img src={monitorImg} alt="monitors"/>
                     </div>
-                    <div className="content-element" onClick={gamepads}>
+                    <div className="content-element" title="Геймпады" onClick={gamepads}>
                         <img src={gamepadImg} alt="gamepads"/>
                     </div>
-                    <div className="content-element" onClick={mice}>
+                    <div className="content-element" title="Компьютерные мыши" onClick={mice}>
                         <img src={mouseImg} alt="mice"/>
                     </div>
-                    <div className="content-element" onClick={headphones}>
+                    <div className="content-element" title="Наушники" onClick={headphones}>
                         <img src={headphoneImg} alt="hedphones"/>
                     </div>
-                    <div className="content-element" onClick={keyboards}>
+                    <div className="content-element" title="Клавиатуры" onClick={keyboards}>
                         <img src={keyboardImg} alt="keyboards"/>
                     </div>
-                    <div className="content-element" onClick={chairs}>
+                    <div className="content-element" title="Игровые кресла" onClick={chairs}>
                         <img src={chairImg} alt="chairs"/>
                     </div>
                 </div>

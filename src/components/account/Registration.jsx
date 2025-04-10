@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { AddressSuggestions } from "react-dadata";
+import 'react-dadata/dist/react-dadata.css';
 import close from "../../assets/images/close.png";
 
 function Registration({ users, setUsers, onToggleForm, closeForm }) {
@@ -11,6 +13,21 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+    }
+
+    const handleCityChange = (suggestion) => {
+        if (suggestion) {
+            const cityName = suggestion.data.city;
+            setFormData(prev => ({
+                ...prev,
+                city: cityName || suggestion.value
+            }));
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                city: ''
+            }));
+        }
     }
 
     const saveData = () => {
@@ -50,7 +67,7 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
             username: '',
             city: '',
             password: ''
-        })
+        });
     }
 
     return (
@@ -59,23 +76,51 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
             <div className="close-form" onClick={closeForm}>
                 <img src={close} alt="close"/>
             </div>
-            <div className="input-container">
-                <label htmlFor="username">
-                    <p>Логин</p>
-                    <input type="text" name="username" value={formData.username} onChange={handleInputChange} required />
-                </label>
-                <label htmlFor="city">
-                    <p>Город</p>
-                    <input type="text" name="city" value={formData.city} onChange={handleInputChange} required />
-                </label>
-                <label htmlFor="password">
-                    <p>Пароль</p>
-                    <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
-                </label>
-            </div>
-            <div className="confirm">
-                <button type="submit" onClick={handleSubmit}>Создать<br/>аккаунт</button>
-            </div>
+            <form onSubmit={handleSubmit}>
+                <div className="input-container">
+                    <label htmlFor="username">
+                        <p>Логин</p>
+                        <input
+                            type="text"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </label>
+                    <label htmlFor="city">
+                        <p>Город</p>
+                        <AddressSuggestions
+                            token={import.meta.env.VITE_APP_DADATA_TOKEN}
+                            inputProps={{
+                                name: "city"
+                            }}
+                            value={formData.city}
+                            onChange={handleCityChange}
+                            filterFromBound="city"
+                            filterToBound="city"
+                            customHeaders={{
+                                "Authorization": `Token ${import.meta.env.VITE_DADATA_TOKEN}`,
+                                "Content-Type": "application/json",
+                                "Accept": "application/json"
+                            }}
+                        />
+                    </label>
+                    <label htmlFor="password">
+                        <p>Пароль</p>
+                        <input
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </label>
+                </div>
+                <div className="confirm">
+                    <button type="submit">Создать<br/>аккаунт</button>
+                </div>
+            </form>
             <div className="change-form change-reg">
                 <p onClick={onToggleForm}>Уже есть аккаунт?</p>
             </div>

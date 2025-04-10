@@ -37,6 +37,7 @@ function Account({onClose}) {
     }, []);
 
     useEffect(() => {
+        console.log(import.meta.env);
         if (showForm) {
             document.body.style.overflow = 'hidden';
         } else {

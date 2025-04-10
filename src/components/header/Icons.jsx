@@ -5,12 +5,21 @@ import {useNavigate} from "react-router-dom";
 import Account from "../account/Account.jsx";
 import Favorite from "./Favorite.jsx";
 import favoriteIcon from "../../assets/images/favourites_icon.svg";
+import {useSelector} from "react-redux";
+import {useProducts} from "../../assets/js/ProductsContext.jsx";
 
 function Icons() {
     const navigate = useNavigate();
+    const favorites = useSelector((state) => state.favorites);
+    const {products} = useProducts();
+    const allProducts = Object.values(products).flat();
     const [userIconChange, setUserIconChange] = useState(userIcon);
     const [showAccountModal, setShowAccountModal] = useState(false);
     const [isFavouriteActive, setIsFavouriteActive] = useState(false);
+
+    const favoriteProducts = allProducts.filter(
+        (product) => favorites[product.id]
+    );
 
     const handleProfile = () => {
         if (sessionStorage.getItem('currentUser')) {
@@ -37,8 +46,9 @@ function Icons() {
         <div className="icons">
             <div className="icon-container" title="Избранное">
                 <img src={favoriteIcon} alt="Icon" onClick={toggleFavourites}/>
-                <Favorite isActive={isFavouriteActive} toggleFavorite={toggleFavourites}/>
+                {favoriteProducts.length > 0 ? <span>{favoriteProducts.length}</span> : ''}
             </div>
+            <Favorite isActive={isFavouriteActive} favoriteProducts={favoriteProducts} favorites={favorites}/>
             <div className="icon-container" title="Корзина">
                 <img src={cartIcon} alt="Icon" onClick={navToCart}/>
             </div>
