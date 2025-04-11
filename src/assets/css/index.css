@@ -43,10 +43,93 @@
 }
 
 .swiper-slide div {
-    background: var(--third-color);
+    background: var(--first-color);
+    border-radius: 20px;
+    border: 2px solid var(--second-color);
     width: 60%;
     height: 100%;
     margin: 0 auto;
+    padding: 20px;
+}
+
+.month-news a, .new-stuff a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.month-news a:hover, .new-stuff a:hover {
+    transform: scale(1.05);
+}
+
+.slider-p-bigger {
+    font-size: 30px;
+    line-height: 150%;
+    color: var(--second-color);
+}
+
+.slider-h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--second-color);
+}
+
+.slider-p {
+    font-size: 24px;
+    line-height: 150%;
+    color: var(--second-color);
+}
+
+.slider-img {
+    max-width: 540px;
+    max-height: 310px;
+    width: 100%;
+    height: 100%;
+}
+
+.ya-delivery {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    cursor: default;
+}
+
+.ya-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ya-delivery button {
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    background: var(--third-color);
+    padding: 20px 35px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.ya-delivery button:hover {
+    background: #7f1b20;
+}
+
+#delivery {
+    z-index: 100;
+    font-size: 32px;
+    line-height: 150%;
+    color: var(--second-color)
 }
 
 .section {

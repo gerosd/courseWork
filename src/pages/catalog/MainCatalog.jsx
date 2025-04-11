@@ -3,6 +3,7 @@ import '../../assets/css/catalog.css';
 import sort from '../../assets/images/sort.png';
 import Cards from "./Cards.jsx";
 import {useProducts} from "../../assets/js/ProductsContext.jsx";
+import ScrollToTopButton from "./ScrollToTopButton.jsx";
 
 function MainCatalog({type, query}) {
     const {products} = useProducts();
@@ -38,6 +39,7 @@ function MainCatalog({type, query}) {
                 <p title="Сбросить сортировку" onClick={resetSorting}>Каталог</p>
             </div>
             <Cards type={type} query={query} allProducts={sortedProducts.length > 0 ? sortedProducts : allProducts} />
+            <ScrollToTopButton />
         </div>
     )
 

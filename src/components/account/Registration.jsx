@@ -91,7 +91,7 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
                     <label htmlFor="city">
                         <p>Город</p>
                         <AddressSuggestions
-                            token={import.meta.env.VITE_APP_DADATA_TOKEN}
+                            token={'c77c6a4b924b84b5b9ec62025a56f76397fd222f'}
                             inputProps={{
                                 name: "city"
                             }}
@@ -99,11 +99,6 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
                             onChange={handleCityChange}
                             filterFromBound="city"
                             filterToBound="city"
-                            customHeaders={{
-                                "Authorization": `Token ${import.meta.env.VITE_DADATA_TOKEN}`,
-                                "Content-Type": "application/json",
-                                "Accept": "application/json"
-                            }}
                         />
                     </label>
                     <label htmlFor="password">
