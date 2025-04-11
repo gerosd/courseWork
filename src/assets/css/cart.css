@@ -1,0 +1,32 @@
+.cart-main {
+    margin: 0 auto;
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+}
+
+.empty-cart p {
+    color: var(--second-color);
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.empty-cart button {
+    background: var(--third-color);
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 48px;
+    padding: 20px 90px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.empty-cart button:hover {
+    background: #7f1b20;
+}

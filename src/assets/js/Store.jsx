@@ -4,7 +4,6 @@ import favoritesReducer from './favoritesSlice';
 const loadFromSessionStorage = () => {
     const savedFavorites = sessionStorage.getItem('favorites');
     return savedFavorites ? JSON.parse(savedFavorites) : {};
-
 };
 
 const saveToSessionStorage = (state) => {

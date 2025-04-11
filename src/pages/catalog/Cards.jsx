@@ -4,6 +4,7 @@ import favoriteIconActive from "../../assets/images/favourites_icon-active.svg";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorites } from "../../assets/js/favoritesSlice.jsx";
+import { addToCart } from "../../assets/js/cartSlice.jsx";
 
 function Cards({ type, query, allProducts }) {
     const favorites = useSelector((state) => state.favorites);
@@ -16,9 +17,14 @@ function Cards({ type, query, allProducts }) {
             : allProducts;
 
     const handleFavoriteClick = (productId, e) => {
-        e.stopPropagation(); // Предотвращаем всплытие события
+        e.stopPropagation();
         dispatch(toggleFavorites(productId));
     };
+
+    const handleBuyClick = (productId, e) => {
+        e.stopPropagation();
+        dispatch(addToCart(productId, e));
+    }
 
     return (
         <div className="cards">
@@ -48,7 +54,7 @@ function Cards({ type, query, allProducts }) {
                                     className={`favorite-icon ${favorites[product.id] ? 'active' : ''}`}
                                 />
                             </div>
-                            <button className="buy-button">Купить</button>
+                            <button className="buy-button" onClick={(e) => handleBuyClick(product.id, e)}>Купить</button>
                         </div>
                         <div className="content-bottom">
                             <div className="bottom-line"></div>
