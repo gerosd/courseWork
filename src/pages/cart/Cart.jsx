@@ -4,8 +4,6 @@ import Footer from "../../components/footer/Footer.jsx";
 import MainCart from "./MainCart.jsx";
 
 function Cart() {
-    
-
     return (
         <div className="cart mainContainer">
             <Header />

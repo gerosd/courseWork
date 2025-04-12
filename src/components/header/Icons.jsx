@@ -11,6 +11,7 @@ import {useProducts} from "../../assets/js/ProductsContext.jsx";
 function Icons() {
     const navigate = useNavigate();
     const favorites = useSelector((state) => state.favorites);
+    const cart = useSelector(state => state.cart);
     const {products} = useProducts();
     const allProducts = Object.values(products).flat();
     const [userIconChange, setUserIconChange] = useState(userIcon);
@@ -19,6 +20,10 @@ function Icons() {
 
     const favoriteProducts = allProducts.filter(
         (product) => favorites[product.id]
+    );
+
+    const cartProducts = allProducts.filter(
+        (product) => cart[product.id]
     );
 
     const handleProfile = () => {
@@ -51,6 +56,7 @@ function Icons() {
             <Favorite isActive={isFavouriteActive} favoriteProducts={favoriteProducts} favorites={favorites}/>
             <div className="icon-container" title="Корзина">
                 <img src={cartIcon} alt="Icon" onClick={navToCart}/>
+                {cartProducts.length > 0 ? <span>{cartProducts.length}</span> : ''}
             </div>
             <div className="icon-container" title="Профиль">
                 <img src={userIconChange} alt="Icon" id="profile-img-change" onClick={handleProfile}/>

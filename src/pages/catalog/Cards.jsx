@@ -23,7 +23,7 @@ function Cards({ type, query, allProducts }) {
 
     const handleBuyClick = (productId, e) => {
         e.stopPropagation();
-        dispatch(addToCart(productId, e));
+        dispatch(addToCart(productId));
     }
 
     return (
