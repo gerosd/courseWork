@@ -9,7 +9,7 @@ import plus from '../../assets/images/Plus.png';
 import minus from '../../assets/images/Minus.png';
 import favoriteIconActive from "../../assets/images/favourites_icon-active.svg";
 import {toggleFavorites} from "../../assets/js/favoritesSlice.jsx";
-import {decreaseQuantity, increaseQuantity, removeFromCart} from "../../assets/js/cartSlice.jsx";
+import {decreaseQuantity, increaseQuantity, removeFromCart, clearCart} from "../../assets/js/cartSlice.jsx";
 
 function MainCart() {
     const favorites = useSelector((state) => state.favorites);
@@ -64,6 +64,16 @@ function MainCart() {
         dispatch(removeFromCart(productId));
     };
 
+    const handleConfirmOrder = () => {
+        if (sessionStorage.getItem('phone') || sessionStorage.getItem('email')) {
+            dispatch(clearCart());
+            alert('Ваш заказ передан в сборку!');
+            navigate('/');
+        } else {
+            alert('Пожалуйста, заполните email или телефон в профиле для связи с вами');
+        }
+    }
+
     const toCatalog = () => navigate('/catalog');
 
     return (
@@ -115,14 +125,21 @@ function MainCart() {
                                             </div>
                                             <p>{calculateProductTotal(product)} ₽</p>
                                         </div>
-                                        <p className="tomorrow">Доставка: завтра</p>
+                                        <div className="cart-left-bottom">
+                                            <p className="tomorrow">Доставка: завтра</p>
+                                            {product.isPremium ?
+                                                <div className="premium">
+                                                    <p>Premium</p>
+                                                </div>
+                                            : ''}
+                                        </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className="cart-confirm">
                             <h1>К оплате: {formatPrice(totalSum)}</h1>
-                            <button>Оформить<br/>заказ</button>
+                            <button onClick={handleConfirmOrder}>Оформить<br/>заказ</button>
                             <p>Доставка: завтра</p>
                         </div>
                     </div>

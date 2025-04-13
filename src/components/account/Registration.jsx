@@ -45,6 +45,11 @@ function Registration({ users, setUsers, onToggleForm, closeForm }) {
             return;
         }
 
+        if (formData.password.length <= 8) {
+            alert('Длина пароля должна быть больше либо равна 8 символов');
+            return;
+        }
+
         const newUser = {
             username: formData.username,
             city: formData.city || '',

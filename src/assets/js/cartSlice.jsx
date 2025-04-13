@@ -32,6 +32,9 @@ export const cartSlice = createSlice({
                     delete state[productId]; // Удаляем если количество стало 0
                 }
             }
+        },
+        clearCart: () => {
+            return {};
         }
     }
 });
@@ -40,7 +43,8 @@ export const {
     addToCart,
     removeFromCart,
     increaseQuantity,
-    decreaseQuantity
+    decreaseQuantity,
+    clearCart
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

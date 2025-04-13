@@ -76,6 +76,7 @@
     border-radius: 20px;
     background: var(--second-color);
     padding: 20px;
+    width: 825px;
 }
 
 .cart-img-container {
@@ -98,11 +99,13 @@
 .cart-left-top {
     display: flex;
     justify-content: space-between;
+    gap: 115px;
 }
 
 .cart-left-top p {
     color: black;
     font-size: 20px;
+    width: 330px;
 }
 
 .cart-item-actions {
@@ -132,7 +135,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 325px;
 }
 
 .cart-left-main p {
@@ -174,6 +176,7 @@
 }
 
 .cart-confirm h1 {
+    margin-top: 5px;
     font-size: 24px;
     font-weight: 500;
 }
@@ -200,8 +203,13 @@
     font-weight: 500;
 }
 
+.cart-left-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .tomorrow {
-    justify-self: flex-end;
     font-size: 16px;
     color: black;
 }

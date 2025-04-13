@@ -58,3 +58,13 @@ p, h1, h2, h3, span, input, input::placeholder, li, button {
 ::-webkit-scrollbar-thumb:hover {
     background: #7f1b20;
 }
+
+::selection {
+    background: var(--third-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--third-color);
+    color: white;
+}
