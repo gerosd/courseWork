@@ -7,6 +7,7 @@
     justify-content: space-between;
     background: $first-color;
     width: 7.813vw;
+    min-width: 100px;
     height: 99.9vh;
     position: fixed;
     top: 0;
@@ -27,8 +28,21 @@
         padding: 28px 0;
         transition: 0.2s ease;
 
+        img {
+            max-width: 64px;
+            max-height: 64px;
+        }
+
         &:hover {
             transform: scale(1.1);
+        }
+
+        @media (max-width: 900px) {
+            padding: 14px 0;
+
+            img {
+                max-width: 42px;
+            }
         }
     }
 
@@ -37,10 +51,11 @@
         flex-direction: column;
         align-items: center;
         gap: 1.852%;
+        width: 100%;
         flex: 1;
 
         p {
-            font-size: 24px;
+            font-size: clamp(16px, 1.5vw, 24px);
             font-weight: bold;
             color: $third-color;
             cursor: pointer;
@@ -55,16 +70,24 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
-            width: 54.701%;
+            width: 100%;
+            align-items: center;
 
             .content-element {
                 cursor: pointer;
                 width: 100%;
-                height: 11.45%;
+                max-width: 64px;
+
+                @media (max-width: 900px) {
+                    max-width: 42px;
+                }
 
                 img {
+                    max-width: 64px;
+                    max-height: 64px;
                     width: 100%;
                     height: 100%;
+                    vertical-align: middle;
                     transition: 0.2s ease;
 
                     &:hover {
@@ -87,12 +110,23 @@
             width: 170%;
             border-radius: 1vw;
             background: $third-color;
+
+            @media (max-width: 1650px) and (min-width: 800px) {
+                width: 100%;
+            }
         }
 
         img {
             cursor: pointer;
-            width: 100%;
+            max-width: 64px;
+            max-height: 64px;
+            width: auto;
+            height: auto;
             transition: 0.2s ease;
+
+            @media (max-width: 900px) {
+                max-width: 42px;
+            }
 
             &:hover {
                 transform: scale(1.1);

@@ -209,7 +209,7 @@
 }
 
 .premium p {
-    font-size: 14px;
+    font-size: clamp(12px, 1vw, 14px) !important;
     font-weight: 600;
     font-style: italic;
     color: var(--third-color);

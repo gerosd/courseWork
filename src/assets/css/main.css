@@ -33,6 +33,12 @@ p, h1, h2, h3, span, input, input::placeholder, li, button {
     letter-spacing: 2px;
 }
 
+@media (max-width: 1000px) {
+    p, h1, h2, h3, span, input, input::placeholder, li, button {
+        letter-spacing: normal;
+    }
+}
+
 .mainContainer {
     min-height: 99.9vh;
     display: flex;

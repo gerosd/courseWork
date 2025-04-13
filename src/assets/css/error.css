@@ -10,7 +10,7 @@
 }
 
 .error-inner h1 {
-    font-size: 40px;
+    font-size: clamp(20px, 3vw, 40px);
 }
 
 .error-inner p {
@@ -19,13 +19,13 @@
 }
 
 .error-inner button {
-    margin-top: 2vw;
+    margin-top: 30px;
     border: none;
     background: var(--third-color);
     color: white;
     padding: 15px 40px;
     border-radius: 15px;
-    font-size: 40px;
+    font-size: clamp(20px, 3vw, 40px);
     font-weight: 500;
     cursor: pointer;
     transition: 0.2s ease;
@@ -35,3 +35,12 @@
     background: #7f1b20;
 }
 
+@media (max-width: 1000px) {
+    .error-inner {
+        gap: 15px;
+    }
+
+    .error-inner button {
+        margin-top: 35px;
+    }
+}
