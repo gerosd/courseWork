@@ -225,7 +225,7 @@
 @media (max-width: 1500px) {
     .cart-item {
         width: 625px;
-        height: 120px;
+
     }
 
     .cart-left-top {
@@ -272,6 +272,7 @@
     .cart-item {
         width: 450px;
         border-radius: 10px;
+        height: 120px;
     }
 
     .cart-img-container {
