@@ -2,12 +2,14 @@
 
 .swiper {
     text-align: center;
-    width: 1640px !important;
+    max-width: 1640px;
     height: 550px;
+    aspect-ratio: 1640 / 550;
 }
 
 .swiper-wrapper {
     width: 100%;
+    height: 100%;
 }
 
 .swiper-button-next,
@@ -22,18 +24,20 @@
 }
 
 .swiper-button-next::after {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     color: transparent;
     background-image: url("../images/arrow.png");
+    background-position: center;
 }
 
 .swiper-button-prev::after {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     color: transparent;
     transform: scaleX(-1);
     background-image: url("../images/arrow.png");
+    background-position: center;
 }
 
 .swiper-slide {
@@ -142,7 +146,7 @@
 }
 
 .section h1 {
-    font-size: 40px;
+    font-size: clamp(18px, 3vw, 40px);
     color: var(--third-color);
     font-weight: 600;
 }
@@ -181,7 +185,7 @@
 }
 
 .card-name {
-    font-size: 26px;
+    font-size: clamp(15px, 2.2vw, 26px);
     width: 290px;
     height: 170px;
     text-align: center;
@@ -198,7 +202,7 @@
 }
 
 .price {
-    font-size: 20px;
+    font-size: clamp(12px, 2vw, 20px);
 }
 
 .premium {
@@ -223,7 +227,7 @@
 }
 
 .to-catalog-container button {
-    font-size: 48px;
+    font-size: clamp(24px, 3vw, 48px);
     font-weight: bold;
     color: #fff;
     padding: 20px 115px;
@@ -276,4 +280,124 @@
     font-size: 28px;
     text-align: center;
     width: 100%;
+}
+
+@media (max-width: 1500px) {
+    .swiper {
+        max-width: 1200px;
+    }
+
+    .popular-cards {
+        width: 1250px;
+    }
+
+    .card-bottom {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .swiper {
+        max-width: 1000px;
+    }
+
+    .popular-cards {
+        width: 1000px;
+    }
+
+    .card-img-container img {
+        max-width: 200px;
+        max-height: 120px;
+    }
+
+    .card-name {
+        width: 220px;
+        height: 120px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .swiper {
+        aspect-ratio: 700 / 450;
+    }
+
+    .to-catalog-container {
+        padding-top: 50px;
+    }
+
+    .to-catalog-container button {
+        padding: 15px 70px;
+    }
+
+    .section {
+        width: 700px;
+    }
+
+    .popular-cards {
+        flex-wrap: wrap;
+        row-gap: 35px;
+        column-gap: 25px;
+        width: 700px;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 100px);
+    }
+
+    .section h1 {
+        text-align: center;
+    }
+
+    .card-bottom {
+        padding: 8px;
+        width: 240px;
+    }
+
+    .news-card {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    .swiper {
+        display: none;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 32px;
+        height: 32px;
+    }
+
+    .card-img-container img {
+        max-width: 105px;
+        max-height: 70px;
+    }
+
+    .section {
+        width: 345px;
+    }
+
+    .to-catalog-container {
+        padding-top: 40px;
+    }
+
+    .news {
+        margin-top: 40px;
+    }
+
+    .section {
+        margin-top: 0;
+        gap: 25px;
+    }
+
+    .news-card {
+        width: 155px;
+        height: 220px;
+    }
 }

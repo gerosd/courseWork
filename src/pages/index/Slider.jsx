@@ -33,6 +33,18 @@ export default () => {
             }}
             speed={1000}
             loop={true}
+            breakpoints={{
+                0: {
+                    autoplay: false,
+                    modules: [],
+                    loop: false,
+                },
+                800: {
+                    autoplay: true,
+                    modules: [Navigation, Autoplay],
+                    loop: true
+                }
+            }}
         >
             <SwiperSlide>
                 <div className="month-news">
