@@ -34,3 +34,44 @@
     border: none;
     border-radius: 10px;
 }
+
+@media (max-width: 1150px) {
+    .our-points {
+        font-size: 26px;
+    }
+
+    .yandex {
+        font-size: 18px !important;
+        padding: 10px 50px;
+    }
+
+    .map {
+        height: 400px;
+    }
+}
+
+@media (max-width: 870px) {
+    .yandex {
+        font-size: 16px !important;
+        width: 600px;
+    }
+
+    .map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+    .our-points {
+        font-size: 20px;
+    }
+
+    .yandex {
+        width: 350px;
+        padding: 10px 40px;
+    }
+
+    .map {
+        height: 200px;
+    }
+}

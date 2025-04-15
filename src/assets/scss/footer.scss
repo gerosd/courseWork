@@ -16,6 +16,7 @@
 
         @media (max-width: 800px) {
             justify-content: center;
+            align-items: normal;
         }
 
         h1 {
@@ -42,6 +43,13 @@
                 }
 
                 li {
+
+                    &::marker {
+                        @media (max-width: 800px) {
+                            font-size: 5px;
+                        }
+                    }
+
                     a {
                         cursor: pointer;
                         color: black;

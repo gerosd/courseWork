@@ -142,7 +142,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    width: 1640px;
+    max-width: 85.417vw;
 }
 
 .section h1 {
@@ -179,9 +179,8 @@
 
 .card-img-container img {
     max-width: 235px;
-    max-height: 160px;
+    height: 160px;
     width: auto;
-    height: auto;
 }
 
 .card-name {
@@ -267,8 +266,10 @@
 }
 
 .news-img-container {
-    width: 100%;
-    height: 64.368%;
+    max-width: 496px;
+    max-height: 278px;
+    width: auto;
+    height: auto;
 }
 
 .news-img-container img {
@@ -277,22 +278,38 @@
 }
 
 .news-card p {
-    font-size: 28px;
+    font-size: clamp(15px, 1.5vw, 28px);
     text-align: center;
     width: 100%;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1650px) {
     .swiper {
         max-width: 1200px;
     }
 
-    .popular-cards {
+    .section {
         width: 1250px;
     }
 
     .card-bottom {
         width: 250px;
+    }
+
+    .news-card {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .card-name {
+        width: 250px;
+        padding: 10px 12px 0 12px;
+    }
+
+    .news-card {
+        width: 350px;
+        height: 420px;
     }
 }
 
@@ -301,23 +318,41 @@
         max-width: 1000px;
     }
 
-    .popular-cards {
-        width: 1000px;
-    }
-
     .card-img-container img {
         max-width: 200px;
         max-height: 120px;
     }
 
     .card-name {
-        width: 220px;
-        height: 120px;
+        padding: 0;
+        width: 200px;
+        height: 150px;
+        font-size: 22px;
     }
 
     .swiper-button-next, .swiper-button-prev {
         width: 40px;
         height: 40px;
+    }
+
+    .card-bottom {
+        width: 180px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .news-card {
+        width: 320px;
+        height: 450px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .news-card {
+        height: 350px;
     }
 }
 
@@ -358,6 +393,17 @@
         width: 240px;
     }
 
+    .news {
+        margin-top: 50px;
+    }
+
+    .news-cards {
+        flex-wrap: wrap;
+        row-gap: 25px;
+        column-gap: 45px;
+        justify-content: center;
+    }
+
     .news-card {
         width: 250px;
         height: 300px;
@@ -379,16 +425,31 @@
         max-height: 70px;
     }
 
-    .section {
-        width: 345px;
+    .section, .popular-cards {
+        max-width: 345px;
     }
 
     .to-catalog-container {
         padding-top: 40px;
     }
 
+    .card-name {
+        width: 130px;
+        height: 95px;
+        font-size: 15px;
+        padding: 0;
+    }
+
+    .card-bottom {
+        width: 140px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
     .news {
-        margin-top: 40px;
+        margin-top: 20px !important;
     }
 
     .section {
@@ -396,8 +457,17 @@
         gap: 25px;
     }
 
+    .news-cards {
+        column-gap: 35px;
+        gap: 5px;
+    }
+
     .news-card {
         width: 155px;
         height: 220px;
+    }
+
+    .news-card p {
+        font-size: 14px;
     }
 }

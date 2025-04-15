@@ -13,7 +13,7 @@
 
 .inner h1 {
     color: #fff;
-    font-size: 24px;
+    font-size: clamp(18px, 1.5vw, 24px);
     font-weight: 500;
 }
 
@@ -76,7 +76,7 @@
     padding: 10px 80px;
     background: var(--third-color);
     border: none;
-    font-size: 24px;
+    font-size: clamp(18px, 1.5vw, 24px);
     font-weight: 500;
     cursor: pointer;
     border-radius: 10px;
@@ -118,4 +118,30 @@
 
 .change-reg {
     padding-top: 60px;
+}
+
+@media (max-width: 800px) {
+    .input-container {
+        padding: 10px 20px 0 20px;
+    }
+
+    .input-container label {
+        width: 250px;
+    }
+
+    .input-container input {
+        height: 40px;
+    }
+
+    .confirm {
+        margin-top: 20px;
+    }
+
+    .confirm button {
+        padding: 10px 40px;
+    }
+
+    .change-form {
+        padding-top: 35px;
+    }
 }

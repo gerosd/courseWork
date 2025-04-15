@@ -242,9 +242,19 @@
                     border-radius: 20px;
 
                     @media (max-width: 1500px) {
-                        left: -55%;
-                        width: 300px;
+                        left: -75%;
+                        width: 400px;
                         height: 200px;
+                    }
+
+                    @media (max-width: 1200px) {
+                        left: -75%;
+                        width: 300px;
+                    }
+
+                    @media (max-width: 800px) {
+                        width: 280px;
+                        left: -100%;
                     }
 
                     &.favorite-active {
@@ -274,7 +284,7 @@
                         }
 
                         .no-favorite {
-                            font-size: 18px;
+                            font-size: clamp(14px, 1vw, 18px);
                             color: white;
                             text-align: center;
                             margin: auto;
@@ -308,7 +318,7 @@
                                 padding: 5px 0;
 
                                 .fav-left-name {
-                                    font-size: 16px;
+                                    font-size: clamp(12px, 0.9vw, 16px);
                                     color: black;
                                     text-align: center;
                                 }
@@ -320,12 +330,25 @@
                                     width: 100%;
 
                                     .fav-name {
+                                        font-size: clamp(12px, 0.9vw, 16px);
                                         color: black;
+
+
+                                    }
+                                    .premium {
+                                         @media (max-width: 1200px) {
+                                             display: none;
+                                         }
                                     }
 
                                     .fav-icon-container {
                                         width: 36px;
                                         height: 32px;
+
+                                        @media (max-width: 800px) {
+                                            width: 26px;
+                                            height: 22px;
+                                        }
 
                                         .fav-icon {
                                             width: 100%;
