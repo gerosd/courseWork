@@ -1,5 +1,5 @@
 .main-catalog {
-    width: 1720px;
+    width: 89.585vw;
     margin: 0 auto;
     padding: 80px 0;
 }
@@ -7,6 +7,7 @@
 .main-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 115px;
     border-radius: 5px;
     border-bottom: 5px solid var(--third-color);
@@ -31,7 +32,7 @@
 
 .main-top p {
     display: block;
-    font-size: 40px;
+    font-size: clamp(20px, 2.8vw, 40px);
     font-weight: 500;
     position: absolute;
     left: 50%;
@@ -229,6 +230,7 @@
     visibility: hidden;
     transform: translateY(20px);
     opacity: 0;
+    z-index: 1000;
     transition: .2s ease;
 }
 
@@ -245,4 +247,245 @@
 .toTop img {
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 1850px) {
+    .main-catalog {
+        padding: 40px 0;
+    }
+
+    .product-card {
+        width: 750px;
+    }
+
+    .content-top {
+        width: 450px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .main-catalog {
+        width: 1350px;
+    }
+
+    .product-card {
+        padding: 15px 10px;
+        width: 650px;
+    }
+
+    .bottom-content {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .bottom-content > * {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+    .content-top {
+        width: 360px;
+        height: 85px;
+    }
+
+    .content-top h1 {
+        font-size: 18px;
+    }
+
+    .content-buttons {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .main-catalog {
+        width: 1000px;
+    }
+
+    .sort-img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .cards {
+        margin-top: 40px;
+        row-gap: 40px;
+    }
+
+    .product-card {
+        width: 450px;
+        height: 300px;
+        position: relative;
+    }
+
+    .content-buttons {
+        position: absolute;
+        right: 10px;
+        bottom: 40px;
+    }
+
+    .bottom-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-self: flex-start;
+        align-items: flex-start;
+        row-gap: 9px;
+        height: 102px;
+    }
+
+    .bottom-line {
+        width: 100%;
+        align-self: flex-end;
+    }
+
+    .bottom-content > * {
+        flex: auto;
+    }
+
+    .bottom-content p {
+        font-size: 14px;
+    }
+
+    .product-card-image {
+        padding-right: 0;
+    }
+
+    .content-top {
+        width: 420px;
+        height: auto;
+        justify-content: flex-end;
+    }
+
+    .content-top h1 {
+        width: 55%;
+        text-align: center;
+    }
+
+    .content-top p {
+        position: absolute;
+        z-index: 100;
+        right: 30px;
+        bottom: 100px;
+        font-size: 18px;
+    }
+
+    .card-image-img {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        max-width: 200px;
+        max-height: 135px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .toTop {
+        right: 40px;
+        bottom: 40px;
+    }
+
+    .main-catalog {
+        width: 800px;
+        padding: 0;
+    }
+
+    .main-top {
+        height: auto;
+    }
+
+    .cards {
+        margin-top: 20px;
+        gap: 4vw;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 320px;
+        height: 250px;
+    }
+
+    .content-top {
+        width: 300px;
+    }
+
+    .content-top h1 {
+        font-size: 16px;
+        width: 60%;
+    }
+
+    .content-top p {
+        font-size: 16px;
+        bottom: 65px;
+        right: 20px;
+    }
+
+    .favorite-icon-container {
+        width: 32px;
+        height: 30px;
+    }
+
+    .content-buttons {
+        bottom: 25px;
+    }
+
+    .content-buttons button {
+        width: 80px;
+        height: 30px;
+    }
+
+    .card-image-img {
+        max-width: 120px;
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 800px) {
+    .toTop {
+        bottom: 30px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .sort-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .main-catalog {
+        width: 80vw;
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .product-card {
+        height: 185px;
+    }
+
+    .card-image-img {
+        max-width: 100px;
+        max-height: 70px;
+    }
+
+    .content-bottom {
+        gap: 10px;
+    }
+
+    .bottom-line {
+        height: 2px;
+    }
+
+    .bottom-content {
+        height: 70px;
+        gap: 1px;
+    }
+
+    .bottom-content p {
+        font-size: 12px;
+    }
+
+    .premium p {
+        padding: 2px;
+    }
 }
