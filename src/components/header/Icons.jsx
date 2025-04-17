@@ -28,7 +28,7 @@ function Icons() {
 
     const handleProfile = () => {
         if (sessionStorage.getItem('currentUser')) {
-            navigate('/profile');
+            navigate('/courseWork/profile');
         } else {
             setShowAccountModal(true)
         }
@@ -45,7 +45,7 @@ function Icons() {
         setIsFavouriteActive(!isFavouriteActive);
     }
 
-    const navToCart = () => navigate('/cart');
+    const navToCart = () => navigate('/courseWork/cart');
 
     return (
         <div className="icons">

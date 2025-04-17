@@ -68,13 +68,13 @@ function MainCart() {
         if (sessionStorage.getItem('phone') || sessionStorage.getItem('email')) {
             dispatch(clearCart());
             alert('Ваш заказ передан в сборку!');
-            navigate('/');
+            navigate('/courseWork');
         } else {
             alert('Пожалуйста, заполните email или телефон в профиле для связи с вами');
         }
     }
 
-    const toCatalog = () => navigate('/catalog');
+    const toCatalog = () => navigate('/courseWork/catalog');
 
     return (
         <div className="cart-main">

@@ -16,7 +16,7 @@ const Header = () => {
         setIsMenuActive(!isMenuActive);
     };
 
-    const main = () => navigate('/');
+    const main = () => navigate('/courseWork');
 
     return (
         <div className="header">

@@ -24,17 +24,17 @@ const Footer = () => {
 
     const handleProfile = () => {
         if (sessionStorage.getItem('currentUser')) {
-            navigate('/profile');
+            navigate('/courseWork/profile');
         } else {
             setShowAccountModal(true)
         }
     }
 
-    const main = () => navigate('/');
-    const catalog = () => navigate('/catalog');
-    const cart = () => navigate('/cart');
-    const vacancies = () => navigate('/vacancies');
-    const contacts = () => navigate('/contact');
+    const main = () => navigate('/courseWork');
+    const catalog = () => navigate('/courseWork/catalog');
+    const cart = () => navigate('/courseWork/cart');
+    const vacancies = () => navigate('/courseWork/vacancies');
+    const contacts = () => navigate('/courseWork/contact');
 
     const navigation = [
         {name: "Главная", action: main},

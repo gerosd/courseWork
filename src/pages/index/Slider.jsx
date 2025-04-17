@@ -12,11 +12,11 @@ import keyboard from '../../assets/images/catalog/keyboards/key1.png';
 export default () => {
     const navigate = useNavigate();
     const toCatalog = () => {
-        navigate('/catalog');
+        navigate('/courseWork/catalog');
     }
 
     const handleKeyboard = () => {
-        navigate('/catalog#keyboard1');
+        navigate('/courseWork/catalog#keyboard1');
     }
 
     return (

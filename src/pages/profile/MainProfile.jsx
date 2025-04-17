@@ -68,7 +68,7 @@ function MainProfile() {
 
     const handleExit = () => {
         sessionStorage.clear();
-        navigate('/');
+        navigate('/courseWork');
     }
 
     return (

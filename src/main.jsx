@@ -18,12 +18,12 @@ createRoot(document.getElementById('root')).render(
             <Provider store={store}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Index/>}/>
-                        <Route path="/contact" element={<Contacts/>}/>
-                        <Route path="/catalog" element={<Catalog/>}/>
-                        <Route path="/cart" element={<Cart/>}/>
-                        <Route path="/vacancies" element={<Vacancies/>}/>
-                        <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/courseWork" element={<Index/>}/>
+                        <Route path="/courseWork/contact" element={<Contacts/>}/>
+                        <Route path="/courseWork/catalog" element={<Catalog/>}/>
+                        <Route path="/courseWork/cart" element={<Cart/>}/>
+                        <Route path="/courseWork/vacancies" element={<Vacancies/>}/>
+                        <Route path="/courseWork/profile" element={<Profile/>}/>
                         <Route path="*" element={<PageNotFound/>}/>
                     </Routes>
                 </BrowserRouter>

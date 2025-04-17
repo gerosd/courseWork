@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 function MainVacancies() {
     const navigate = useNavigate();
     const navigateToHome = () => {
-        navigate('/');
+        navigate('/courseWork');
     }
     
     return (

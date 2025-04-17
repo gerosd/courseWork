@@ -10,7 +10,7 @@ function Popular() {
     const navigate = useNavigate();
 
     const handleClick = (id) => () => {
-        navigate(`/catalog#${id}`);
+        navigate(`/courseWork/catalog#${id}`);
     }
 
     return (

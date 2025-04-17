@@ -14,42 +14,42 @@ function SideMenu({isActive, toggleMenu}) {
     const navigate = useNavigate();
 
     const contacts = () => {
-        navigate('/contact');
+        navigate('/courseWork/contact');
         toggleMenu();
     }
 
     const monitors = () => {
-        navigate('/catalog?type=monitor');
+        navigate('/courseWork/catalog?type=monitor');
         toggleMenu();
     }
 
     const gamepads = () => {
-        navigate('/catalog?type=gamepad');
+        navigate('/courseWork/catalog?type=gamepad');
         toggleMenu();
     }
 
     const mice = () => {
-        navigate('/catalog?type=mice');
+        navigate('/courseWork/catalog?type=mice');
         toggleMenu();
     }
 
     const headphones = () => {
-        navigate('/catalog?type=headphones');
+        navigate('/courseWork/catalog?type=headphones');
         toggleMenu();
     }
 
     const keyboards = () => {
-        navigate('/catalog?type=keyboard');
+        navigate('/courseWork/catalog?type=keyboard');
         toggleMenu();
     }
 
     const chairs = () => {
-        navigate('/catalog?type=chair');
+        navigate('/courseWork/catalog?type=chair');
         toggleMenu();
     }
 
     const catalog = () => {
-        navigate('/catalog');
+        navigate('/courseWork/catalog');
         toggleMenu();
     }
 

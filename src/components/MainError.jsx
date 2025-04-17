@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 function MainError() {
 
     const navigate = useNavigate();
-    const toCatalog = () => navigate('/catalog');
+    const toCatalog = () => navigate('/courseWork/catalog');
 
     return (
         <div className="error-inner">

@@ -12,7 +12,7 @@ function SearchBar() {
             return;
         }
 
-        navigate(`/catalog?query=${input}`);
+        navigate(`/courseWork/catalog?query=${input}`);
     }
 
     const handleKeyPress = (e) => {
