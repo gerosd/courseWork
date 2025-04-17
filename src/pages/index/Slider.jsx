@@ -34,15 +34,13 @@ export default () => {
             speed={1000}
             loop={true}
             breakpoints={{
-                0: {
+                800: {
                     autoplay: false,
                     modules: [],
                     loop: false,
                 },
-                800: {
-                    autoplay: true,
+                801: {
                     modules: [Navigation, Autoplay],
-                    loop: true
                 }
             }}
         >
