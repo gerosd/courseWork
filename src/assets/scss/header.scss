@@ -292,6 +292,7 @@
 
                         .favorite-card {
                             display: flex;
+                            justify-content: space-between;
                             background: $second-color;
                             color: black;
                             border-radius: 10px;
@@ -302,11 +303,14 @@
                                 padding: 5px;
 
                                 img {
-                                    max-width: 135px;
-                                    max-height: 90px;
-                                    width: auto;
-                                    height: auto;
+                                    width: 135px;
+                                    height: 90px;
                                     object-fit: contain;
+
+                                    @media (max-width: 1000px) {
+                                        width: 100px;
+                                        height: 50px;
+                                    }
                                 }
                             }
 
