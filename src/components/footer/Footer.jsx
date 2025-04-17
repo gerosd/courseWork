@@ -8,6 +8,14 @@ import Account from "../account/Account.jsx";
 import HowWorks from "./HowWorks.jsx";
 import Points from "./Points.jsx";
 
+import file1 from '../../assets/documents/Гарантийные условия PowerVibe.pdf';
+import file2 from '../../assets/documents/Положение о товарном кредитовании PowerVibe.pdf';
+import file3 from '../../assets/documents/Условия доставки PowerVibe.pdf';
+import file4 from '../../assets/documents/Способы оплаты PowerVibe.pdf';
+import file5 from '../../assets/documents/Политика конфиденциальности PowerVibe.pdf';
+import file6 from '../../assets/documents/Правила продаж PowerVibe.pdf';
+import file7 from '../../assets/documents/Рекомендательные технологии PowerVibe.pdf';
+
 const Footer = () => {
     const navigate = useNavigate();
     const [showAccountModal, setShowAccountModal] = useState(false);
@@ -45,16 +53,16 @@ const Footer = () => {
     ];
     const forBuyers = [
         {name: "Пункты выдачи заказов", action: handlePoints},
-        {name: "Гарантия", file: "/src/assets/documents/Гарантийные условия PowerVibe.pdf"},
-        {name: "Кредиты", file: "/src/assets/documents/Положение о товарном кредитовании PowerVibe.pdf"},
-        {name: "Условия доставки", file: "/src/assets/documents/Условия доставки PowerVibe.pdf"},
-        {name: "Способы оплаты", file: "/src/assets/documents/Способы оплаты PowerVibe.pdf"}
+        {name: "Гарантия", file: file1},
+        {name: "Кредиты", file: file2},
+        {name: "Условия доставки", file: file3},
+        {name: "Способы оплаты", file: file4}
     ];
     const company = [
-        {name: "Политика конфиденциальности", file: "/src/assets/documents/Политика конфиденциальности PowerVibe.pdf"},
+        {name: "Политика конфиденциальности", file: file5},
         {name: "Как мы работаем", action: handleWorks},
-        {name: "Правила продаж", file: "/src/assets/documents/Правила продаж PowerVibe.pdf"},
-        {name: "Рекомендательные технологии", file: "/src/assets/documents/Рекомендательные технологии PowerVibe.pdf"},
+        {name: "Правила продаж", file: file6},
+        {name: "Рекомендательные технологии", file: file7},
         {name: "Вакансии", action: vacancies},
     ];
 
