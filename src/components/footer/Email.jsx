@@ -2,6 +2,9 @@ import React from "react";
 import confirm from "../../assets/images/Confirm-email.png";
 import {useState} from 'react';
 
+import file1 from '../../assets/documents/Политика конфиденциальности PowerVibe.pdf';
+import file2 from '../../assets/documents/Политика обработки персональных данных PowerVibe.pdf';
+
 function Email() {
 
     const [email, setEmail] = useState('');
@@ -43,9 +46,9 @@ function Email() {
             </div>
             <p className="email-terms">
                 Подписываясь на рассылку, Вы соглашаетесь
-                c условиями <a href="src/assets/documents/Политика%20конфиденциальности%20PowerVibe.pdf" download>политики
+                c условиями <a href={file1} download>политики
                 конфиденциальности</a>
-                и <a href="src/assets/documents/Политика%20обработки%20персональных%20данных%20PowerVibe.pdf" download>политики
+                и <a href={file2} download>политики
                 обработки персональных данных</a>
             </p>
         </div>
